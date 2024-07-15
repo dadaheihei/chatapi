@@ -22,14 +22,15 @@ def deleteUser(request,userAccount):
     #UserRequest.objects.filter(userAccount=userAccount).delete()
 
 #向数据库中添加用户请求以及回答
-def addRequest(request,userAccount,requestText,requestTime,answerTime,answerText=None,answerPhoto= None , answerVideo= None ):
+def addRequest(request,userAccount,requestText,requestTime,answerTime,requestapi,answerText=None,answerPhoto= None , answerVideo= None ):
     UserRequest.objects.create(userAccount=userAccount,
                                requestText=requestText,
                                requestTime=requestTime,
                                answerTime=answerTime,
                                answerText=answerText,
                                answerPhoto=answerPhoto,
-                               answerVideo=answerVideo)
+                               answerVideo=answerVideo，
+                               requestapi=requestapi)
 #删除某一次请求
 def deleteRequest(request,userAccount , requestText , requestTime):
     UserRequest.objects.filter(userAccount = userAccount,requestText=requestText,requestTime=requestTime).delete()
