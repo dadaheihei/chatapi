@@ -24,7 +24,7 @@ class UserRequest(models.Model):
     answerPhoto = models.URLField(max_length=200, verbose_name='Image URL')  #图片和视频的路径,但是需要分开吗？
     answerVideo = models.URLField(max_length=200, verbose_name='video URL')
     answerTime = models.DateTimeField(help_text="用户接到回复的时间")
-
+    requestapi=models.CharField(max_length=150, unique=True)
 
     class Meta:
         managed = True
